@@ -1,0 +1,5 @@
+Java 17 introduces a short way of pattern matching for the instanceof operator, which helps to simplify the code required for type checks. 
+With pattern matching, you can extract the value of the checked object into a new variable if the check succeeds. 
+This new variable can then be used in following code. It eliminates the need to cast the object into the expected type.
+
+Note that this was a preview feature introduced under Java 14 Features. It has become a permanent feature under the list of Java 17 features.

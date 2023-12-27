@@ -1,0 +1,41 @@
+Sealed classes and interfaces offer a restriction whether classes/interfaces can extend/implement other classes/interfaces or not.
+
+In simple words, Sealed Classes work by specifying which classes or interfaces are allowed to extend or implement a particular class or
+ interface. This is achieved by using the “sealed” modifier on the parent class or interface, and then specifying the allowed subclasses 
+ or implementing classes using the “permits” keyword.
+
+Sealed Classes were proposed by JEP 360 and delivered in JDK 15 as a preview feature. They were proposed again, with some refinements, 
+and delivered in JDK 16 as a preview feature. Now in JDK 17, Sealed Classes are being finalized with no changes from JDK 16.
+
+Let’s understand it with an example of a sealed class:
+
+public sealed class Shape permits Circle, Square, Triangle {
+    // ...
+}
+
+In the example, the “sealed” modifier is used to specify that the Shape class is a sealed class. The “permits” keyword is then used to 
+specify the allowed subclasses of Shape, which are Circle, Square, and Triangle.
+
+By using a sealed class, we can ensure that the only allowed subclasses of Shape are Circle, Square, and Triangle. Any other attempt to 
+extend Shape will result in a compilation error.
+
+In addition to specifying allowed subclasses, sealed classes also allow developers to define “non-sealed” or “final” subclasses that 
+cannot be further extended. Here is an example of a non-sealed subclass:
+
+public non-sealed class Circle extends Shape {
+    // ...
+}
+In the example, the “non-sealed” modifier is used to specify that the Circle class is a non-sealed subclass of Shape. This means that 
+Circle can be extended by any other class, but it cannot be further extended itself.
+
+Sealed classes also allow developers to define “permitted” interfaces that can be implemented by the allowed subclasses. Here is an 
+example:
+
+public sealed class Shape permits Circle, Square, Triangle
+        implements Drawable, Resizable {
+    // ...
+}
+In the example, the Shape class implements the Drawable and Resizable interfaces, which are permitted to be implemented by its allowed 
+subclasses.
+
+Sealed classes provide several benefits, including increased type safety, improved code readability, and reduced coupling.

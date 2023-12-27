@@ -1,0 +1,25 @@
+Java has never prided itself on its ability to perform String manipulation.
+
+Previously, the simple task of hard-coding formatted text within a Java program was difficult because it required String terminators, 
+concatenators and esoteric escape sequences that made text embedded within a Java program difficult to both read and write. 
+But in Java 17, you can now use text blocks, which make the use of text in a Java program much more natural.
+
+Compare a traditional block of text embedded within a Java program to the new, Java 17 text block feature.
+
+Prior to Java 17, the text block looked like this:
+
+String oldTextBlock = "<html>\n" +
+              "    <body>\n" +
+              "        <em>Cool LTS Java 17 Features</em>\n" +
+              "    </body>\n" +
+              "</html>\n";
+Now, it looks like this:
+
+String newTextBlock = """
+              <html>
+                  <body>
+                      <em>Cool LTS Java 17 Features</em>\
+                  </body>
+              </html>
+              """;
+This Java 17 feature represents a marked usability improvement from prior iterations.

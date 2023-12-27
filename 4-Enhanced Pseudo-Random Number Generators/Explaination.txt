@@ -1,0 +1,29 @@
+“Enhanced Pseudo-Random Number Generators” introduced under Java 17 Features. This feature provides additional pseudo-random number
+ generators (PRNGs) that can be used to generate random numbers in Java applications. The new PRNGs are designed to be faster and more 
+secure than the existing PRNGs in Java.
+
+The new PRNGs are implemented as instances of the SplittableRandom class, which provides a way to generate a sequence of pseudo-random 
+numbers that can be split and used to create new PRNG instances. This allows multiple threads to generate random numbers independently 
+and with low contention, which can improve performance in multi-threaded applications.
+
+For example, below code demonstrates the concept of using the SplittableRandom class to generate random numbers:
+
+SplittableRandom random = new SplittableRandom();
+int randomNumber = random.nextInt();
+In the example, we create a new instance of the SplittableRandom class and use its nextInt() method to generate a random integer. The 
+nextInt() method returns a pseudo-random integer that is uniformly distributed between Integer.MIN_VALUE and Integer.MAX_VALUE.
+
+We can also use the SplittableRandom class to generate random numbers in a range, For example:
+
+SplittableRandom random = new SplittableRandom();
+int randomNumberInRange = random.nextInt(10, 20);
+In the example, we use the nextInt(int bound) method to generate a pseudo-random integer that is uniformly distributed between 10 
+(inclusive) and 20 (exclusive).
+
+Another useful feature of the SplittableRandom class is that it allows us to split the PRNG and create new instances that generate 
+independent sequences of random numbers. For example, below code demonstrates the concept:
+
+SplittableRandom random1 = new SplittableRandom();
+SplittableRandom random2 = random1.split();
+In the example, we create a new instance of the SplittableRandom class and then split it to create a new instance that generates an 
+independent sequence of random numbers. The two instances can be used in separate threads to generate random numbers with low contention.

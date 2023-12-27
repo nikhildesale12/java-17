@@ -1,0 +1,8 @@
+Java 17 introduced a new feature called “Pattern Matching for switch Statements” that allows developers to simplify the code 
+for switch statements that involve pattern matching. This feature provides a short and more readable syntax to handle multiple
+conditions in switch statements.
+
+The new feature allows developers to use patterns to match against the value of an object of any type.
+
+A variable pattern allows you to match against a specific value and assign it to a variable. A type pattern allows you to match against 
+the type of a value.
